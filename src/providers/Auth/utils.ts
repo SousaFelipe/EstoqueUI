@@ -3,13 +3,22 @@ import { IUser } from './types'
 
 
 
+const KEY = '8gj1RJTG059JdfgG'
+
+
+
 export function setUserStorage (user: IUser | null) {
-    localStorage.setItem('U', JSON.stringify(user))
+    if (user) {
+        localStorage.setItem(KEY, JSON.stringify(user))
+    }
+    else {
+        localStorage.removeItem(KEY)
+    }
 }
 
 
 export function getUserStorage () {
-    const json = localStorage.getItem('U')
+    const json = localStorage.getItem(KEY)
 
     if ( ! json) {
         return null
@@ -25,6 +34,19 @@ export async function LoginRequest (email: string, password: string) {
         return request.data
     }
     catch (error) {
+        console.log(error)
+        return null
+    }
+}
+
+
+export async function LogoutRequest (token: string) {
+    try {
+        const request = await Api.post('/logout', { token })
+        return request.data
+    }
+    catch (error) {
+        console.log(error)
         return null
     }
 }
