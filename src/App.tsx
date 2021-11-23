@@ -13,8 +13,6 @@ import Relatorios from './components/pages/Relatorios'
 import Saidas from './components/pages/Saidas'
 import Transferencias from './components/pages/Transferencias'
 
-import 'bootstrap/dist/css/bootstrap.min.css'
-
 
 
 export default function App () {

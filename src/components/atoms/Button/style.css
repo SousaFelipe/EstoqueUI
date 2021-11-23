@@ -1,0 +1,88 @@
+
+
+
+button {
+    display:            flex;
+    justify-content:    center;
+    align-items:        center;
+    margin:             3px;
+    border:             none;
+    outline:            none;
+    cursor:             pointer;
+    *cursor:            hand;
+    border-radius:      4px;
+    color:              var(--text-primary);
+    font-weight:        400;
+}
+
+
+
+button.sm {
+    min-height:     29px;
+    padding-left:   12px;
+    padding-right:  12px;
+    font-size:      0.75em;
+}
+
+button.md {
+    min-height:     32px;
+    padding-left:   16px;
+    padding-right:  16px;
+}
+
+button.lg {
+    min-height:     42px;
+    padding-left:   18px;
+    padding-right:  18px;
+    font-size:      1.25em;
+}
+
+
+
+button:not(.warning) { color: white; }
+
+
+
+button.primary          { background-color: var(--lsp-blue-one); }
+button.primary:active,
+button.primary:focus    { box-shadow: 0 0 0 3px var(--lsp-blue-two); }
+button.primary:hover    {
+    transition:         background-color 0.2s ease-in;
+    background-color:   var(--lsp-blue-tree);
+}
+
+
+button.info             { background-color: var(--lsp-cyan-one); }
+button.info:active,
+button.info:focus       { box-shadow: 0 0 0 3px var(--lsp-cyan-two); }
+button.info:hover       {
+    transition:         background-color 0.2s ease-in;
+    background-color:   var(--lsp-cyan-tree);
+}
+
+
+button.success          { background-color: var(--lsp-green-one); }
+button.success:active,
+button.success:focus    { box-shadow: 0 0 0 3px var(--lsp-green-two); }
+button.success:hover    {
+    transition:         background-color 0.2s ease-in;
+    background-color:   var(--lsp-green-tree);
+}
+
+
+button.warning          { background-color:   var(--lsp-yellow-one); }
+button.warning:active,
+button.warning:focus    { box-shadow: 0 0 0 3px var(--lsp-yellow-two); }
+button.warning:hover    {
+    transition:         background-color 0.2s ease-in;
+    background-color:   var(--lsp-yellow-tree);
+}
+
+
+button.danger           { background-color: var(--lsp-red-one); }
+button.danger:active,
+button.danger:focus     { box-shadow: 0 0 0 3px var(--lsp-red-two); }
+button.danger:hover     {
+    transition:         background-color 0.2s ease-in;
+    background-color:   var(--lsp-red-tree);
+}
