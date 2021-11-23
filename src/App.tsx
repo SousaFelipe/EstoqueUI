@@ -1,13 +1,17 @@
 import React from 'react'
 
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import { AuthProvider } from './providers/Auth'
 
-import Estoque from './components/pages/Estoque'
+import Dashboard from './components/pages/Dashboard'
+import Entradas from './components/pages/Entradas'
 import Home from './components/pages/Home'
-import Login from './components/pages/Auth/Login'
 import Layout from './providers/Layout'
+import Login from './components/pages/Auth/Login'
+import Relatorios from './components/pages/Relatorios'
+import Saidas from './components/pages/Saidas'
+import Transferencias from './components/pages/Transferencias'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -18,16 +22,20 @@ export default function App () {
         <AuthProvider>
             <BrowserRouter>
 
-                <Switch>
+                <Routes>
 
-                    <Route exact path='/' component={ Home } />
-                    <Route path='/login' component={ Login } />
+                    <Route path='/' element={ <Home/> } />
+                    <Route path='/login' element={ <Login/> } />
 
-                    <Route component={ Layout }>
-                        <Route path='/estoque' component={ Estoque } />
+                    <Route element={ <Layout/> }>
+                        <Route path='/dashboard' element={ <Dashboard/> } />
+                        <Route path='/entradas' element={ <Entradas/> } />
+                        <Route path='/saidas' element={ <Saidas /> } />
+                        <Route path='/transferencias' element={ <Transferencias /> } />
+                        <Route path='/relatorios' element={ <Relatorios /> } />
                     </Route>
 
-                </Switch>
+                </Routes>
 
             </BrowserRouter>
         </AuthProvider>

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
-
-import { useHistory } from 'react-router'
+import { Navigate } from 'react-router'
 
 import Container from 'react-bootstrap/Container'
 import Button from 'react-bootstrap/Button'
@@ -23,17 +22,9 @@ export default function Login () {
 
 
     const auth = useAuth()
-    const history = useHistory()
 
     const [email, setEmail] = useState<string | null>(null)
     const [password, setPassword] = useState<string | null>(null)
-
-
-    useEffect(() => {
-        if (auth.auth) {
-            history.push(AUTENTICATED)
-        }
-    }, [auth])
 
 
     async function signIn () {
@@ -51,9 +42,9 @@ export default function Login () {
     }
 
 
-    return (
+    return !auth ? (
         <Container className="v-center">
-            <Row className="justify-content-center">
+            <Row className="justify-content-center w-100">
                 <Col xs={12} md={6} lg={4}>
 
                     <Card>
@@ -77,5 +68,8 @@ export default function Login () {
                 </Col>
             </Row>
         </Container>
+    )
+    : (
+        <Navigate replace to={ AUTENTICATED } />
     )
 }

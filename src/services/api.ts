@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 
-export const AUTENTICATED = '/estoque'
+export const AUTENTICATED = '/dashboard'
 export const UNAUTENTICATED = '/login'
 
 
