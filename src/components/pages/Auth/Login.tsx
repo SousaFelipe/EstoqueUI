@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Navigate } from 'react-router'
 
 import Button from '../../atoms/Button'
 import Input from '../../atoms/Input'
-import { Card, CardBody, CardHeader } from '../../molecules/Card'
+import { Card, CardBody } from '../../molecules/Card'
 import Text from '../../atoms/Text'
 import Flex from '../../atoms/Flex'
 
@@ -38,24 +38,26 @@ export default function Login () {
 
 
     return ( ! auth.auth) ? (
-        <Flex justify="center" align="center" className="w-100">
+        <div className="container-fluid">
+            <div className="row justify-content-center">
+                <div className="col-xs-10 col-sm-8 col-md-6 col-lg-4">
 
-            <Card>
-                <CardBody>
+                    <Card className="w-100">
+                        <CardBody>
+                            <Flex justify="center">
+                                <Text color="cyan" size="lg">Login</Text>
+                            </Flex>
+                            <Flex direction="col" justify="stretch">
+                                <Input type="text" placeholder="Email" className="lg" />
+                                <Input type="password" placeholder="Senha" className="lg" />
+                                <Button color="primary" size="lg" className="w-100" block>Entrar</Button>
+                            </Flex>
+                        </CardBody>
+                    </Card>
 
-                    <Flex justify="center">
-                        <Text color="cyan" size="lg">Login</Text>
-                    </Flex>
-
-                    <Flex direction="col">
-                        <Input type="text" placeholder="Email" className="lg" />
-                        <Input type="password" placeholder="Senha" className="lg" />
-                    </Flex>
-
-                </CardBody>
-            </Card>
-
-        </Flex>
+                </div>
+            </div>
+        </div>
     )
     : (
         <Navigate replace to={ AUTENTICATED } />

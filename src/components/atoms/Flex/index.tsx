@@ -10,7 +10,6 @@ export default function Flex (props : any) : JSX.Element {
 
 
     const [flex, setFlex] = useState<TypeFlex>()
-    const [className, setClassName] = useState<string>('')
 
 
     useEffect(() => {
@@ -21,15 +20,11 @@ export default function Flex (props : any) : JSX.Element {
             align: props.align || 'start'
         })
 
-        setClassName(
-            `flex-${ flex?.direction } justify-${ flex?.justify } align-${ flex?.align } ${ props.className }`
-        )
-
-    }, [flex, className])
+    }, [props.className])
 
 
     return (
-        <div className={ className }>
+        <div className={`flex-${ flex?.direction } justify-${ flex?.justify } align-${ flex?.align } ${ props.className }`}>
             { props.children }
         </div>
     )
