@@ -36,7 +36,7 @@
     --lsp-purple-tree:  #5D31Af;
     --lsp-purple-four:  #4F18B6;
 
-    --lsp-white:        #FFFFFF;
+    --lsp-blank:        #FFFFFF;
     --lsp-light:        #FAFAFA;
     --lsp-primary:      #F1F2F7;
     --lsp-secondary:    #DAE2ED;
@@ -60,3 +60,35 @@
 ::-ms-input-placeholder {
     color:      var(--text-secondary);
 }
+
+
+
+html,
+body {
+    margin:             0;
+    padding:            0;
+    width:              100vw;
+    height:             100vh;
+    background-color:   var(--lsp-primary);
+}
+* {
+    font-family: 'Rubik', sans-serif;
+}
+#root {
+    display:    flex;
+    width:      100%;
+    height:     100%;
+}
+
+.h-center {
+    display:        flex;
+    justify-content:center;
+}
+
+.v-center {
+    display:        flex;
+    align-items:    center;
+}
+
+.w-100 { width:  100%; }
+.h-100 { height: 100%; }

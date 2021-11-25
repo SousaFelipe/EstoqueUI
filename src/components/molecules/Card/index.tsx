@@ -1,39 +1,42 @@
 import React from 'react'
 
+import './style.css'
 
 
-export function CardHeader () {
+
+export function CardHeader (props: any) : JSX.Element  {
     return (
-        <div className="card-header">
-
+        <div className={`card-header ${ props.className }`}>
+            { props.children }
         </div>
     )
 }
 
 
-export function CardBody () {
-    return (
-        <div className="card-body">
 
+export function CardBody (props: any) : JSX.Element  {
+    return (
+        <div className={`card-body ${ props.className }`}>
+            { props.children }
         </div>
     )
 }
 
 
-export function CardFooter () {
-    return (
-        <div className="card-footer">
 
+export function CardFooter (props: any) : JSX.Element  {
+    return (
+        <div className={`card-footer ${ props.className }`}>
+            { props.children }
         </div>
     )
 }
 
 
-export default function Card (props: any) : JSX.Element {
 
-
+export function Card (props : any) : JSX.Element {
     return (
-        <div className="card">
+        <div className={`card ${ props.className }`}>
             { props.children }
         </div>
     )

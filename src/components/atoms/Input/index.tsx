@@ -13,7 +13,7 @@ export default function Input (props : any) : JSX.Element {
 
 
     return (
-        <div className={ `input-container ${ (props.type || 'default') }` }>
+        <div className={ `input-container ${ (props.color || 'default') }` }>
 
             { () => shouldBeHaveLabel() }
 

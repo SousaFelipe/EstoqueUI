@@ -3,6 +3,9 @@ import { Navigate } from 'react-router'
 
 import Button from '../../atoms/Button'
 import Input from '../../atoms/Input'
+import { Card, CardBody, CardHeader } from '../../molecules/Card'
+import Text from '../../atoms/Text'
+import Flex from '../../atoms/Flex'
 
 import { useAuth } from '../../../providers/Auth/useAuth'
 
@@ -35,13 +38,24 @@ export default function Login () {
 
 
     return ( ! auth.auth) ? (
-        <div style={{ width: '100%' }}>
+        <Flex justify="center" align="center" className="w-100">
 
-            <Input className="md" placeholder="Medium" />
+            <Card>
+                <CardBody>
 
-            <Input className="lg" placeholder="Large" />
+                    <Flex justify="center">
+                        <Text color="cyan" size="lg">Login</Text>
+                    </Flex>
 
-        </div>
+                    <Flex direction="col">
+                        <Input type="text" placeholder="Email" className="lg" />
+                        <Input type="password" placeholder="Senha" className="lg" />
+                    </Flex>
+
+                </CardBody>
+            </Card>
+
+        </Flex>
     )
     : (
         <Navigate replace to={ AUTENTICATED } />
