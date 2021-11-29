@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from 'react'
+import React from 'react'
 
 import {
     IAuthProvider,
@@ -15,18 +15,18 @@ import {
 
 
 
-export const AuthContext = createContext<IContext>({} as IContext)
+export const AuthContext = React.createContext<IContext>({} as IContext)
 
 
 
 export function AuthProvider ({ children } : IAuthProvider) {
 
 
-    const [auth, setAuth] = useState<boolean>(false)
-    const [user, setUser] = useState<IUser | null>()
+    const [auth, setAuth] = React.useState<boolean>(false)
+    const [user, setUser] = React.useState<IUser | null>()
 
 
-    useEffect(() => {
+    React.useEffect(() => {
 
         const localUser = getUserStorage()
 

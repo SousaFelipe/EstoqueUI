@@ -15,7 +15,7 @@ export default function Layout () : JSX.Element {
     return auth.token ? (
             <main>
 
-
+                <Outlet />
 
             </main>
         )

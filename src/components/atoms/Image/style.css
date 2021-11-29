@@ -1,0 +1,11 @@
+
+img {
+    display:    block;
+    clear:      both;
+}
+
+img.w-start     { width:        auto !important;   }
+img.w-stretch   { max-width:    100%;          }
+
+img.h-start     { height:       auto !important;  }
+img.h-stretch   { max-height:   100%; }

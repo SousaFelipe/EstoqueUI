@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
 import './style.css'
 
@@ -6,19 +6,9 @@ import './style.css'
 
 export function CardHeader (props: any) : JSX.Element  {
 
-
-    const [className, setClassName] = useState<string>()
-
-
-    useEffect(() => {
-
-        setClassName(`card-header ${ props.className || '' }`)
-
-    }, [])
-
-
     return (
-        <div className={ className }>
+        <div style={{ ...props.style }}
+            className={`card-header ${ props.className || '' }`}>
             { props.children }
         </div>
     )
@@ -28,19 +18,9 @@ export function CardHeader (props: any) : JSX.Element  {
 
 export function CardBody (props: any) : JSX.Element  {
 
-
-    const [className, setClassName] = useState<string>()
-
-
-    useEffect(() => {
-
-        setClassName(`card-body ${ props.className || '' }`)
-
-    }, [])
-
-
     return (
-        <div className={ className }>
+        <div style={{ ...props.style }}
+            className={`card-body ${ props.className || '' }`}>
             { props.children }
         </div>
     )
@@ -50,19 +30,9 @@ export function CardBody (props: any) : JSX.Element  {
 
 export function CardFooter (props: any) : JSX.Element  {
 
-
-    const [className, setClassName] = useState<string>()
-
-
-    useEffect(() => {
-
-        setClassName(`card-footer ${ props.className || '' }`)
-
-    }, [])
-
-
     return (
-        <div className={ className }>
+        <div style={{ ...props.style }}
+            className={`card-footer ${ props.className || '' }`}>
             { props.children }
         </div>
     )
@@ -72,19 +42,9 @@ export function CardFooter (props: any) : JSX.Element  {
 
 export function Card (props : any) : JSX.Element {
 
-
-    const [className, setClassName] = useState<string>()
-
-
-    useEffect(() => {
-
-        setClassName(`card ${ props.className || '' }`)
-
-    }, [])
-
-
     return (
-        <div className={ className }>
+        <div style={{ ...props.style }}
+            className={`card ${ props.className || '' }`}>
             { props.children }
         </div>
     )

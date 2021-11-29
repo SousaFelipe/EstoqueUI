@@ -10,29 +10,29 @@ button {
     outline:            none;
     cursor:             pointer;
     *cursor:            hand;
-    border-radius:      4px;
-    color:              var(--text-primary);
+    border-radius:      6px;
     font-weight:        400;
+    color:              white;
 }
 
 
 
 button.sm {
-    min-height:     29px;
+    min-height:     var(--control-size-sm);
     padding-left:   12px;
     padding-right:  12px;
     font-size:      0.65em;
 }
 
 button.md {
-    min-height:     32px;
+    min-height:     var(--control-size-md);
     padding-left:   16px;
     padding-right:  16px;
     font-size:      0.75em;
 }
 
 button.lg {
-    min-height:     42px;
+    min-height:     var(--control-size-lg);
     padding-left:   18px;
     padding-right:  18px;
     font-size:      1.00em;
@@ -40,51 +40,63 @@ button.lg {
 
 
 
-button:not(.warning) { color: white; }
-button.block { width: calc(100% - 6px); }
+button:not(.warning),
+button:not(.clear) { color: white; }
 
 
 
-button.primary          { background-color: var(--lsp-blue-one); }
+button.clear          {
+    background-color:   transparent;
+    color:              var(--text-secondary);
+}
+
+button.clear:hover    {
+    transition: color 0.1s ease-in;
+    color:      var(--text-primary);
+}
+
+
+
+button.primary          { background-color: var(--bg-brand); }
 button.primary:active,
-button.primary:focus    { box-shadow: 0 0 0 3px var(--lsp-blue-two); }
+button.primary:focus    { box-shadow: 0 0 0 3px var(--bg-brand-soft); }
 button.primary:hover    {
-    transition:         background-color 0.2s ease-in;
-    background-color:   var(--lsp-blue-tree);
+    transition:         background-color 0.1s ease-in;
+    background-color:   var(--bg-brand-dark);
 }
 
 
-button.info             { background-color: var(--lsp-cyan-one); }
+button.info             { background-color: var(--bg-info); }
 button.info:active,
-button.info:focus       { box-shadow: 0 0 0 3px var(--lsp-cyan-two); }
+button.info:focus       { box-shadow: 0 0 0 3px var(--bg-info-soft); }
 button.info:hover       {
-    transition:         background-color 0.2s ease-in;
-    background-color:   var(--lsp-cyan-tree);
+    transition:         background-color 0.1s ease-in;
+    background-color:   var(--bg-info-dark);
 }
 
 
-button.success          { background-color: var(--lsp-green-one); }
+button.success          { background-color: var(--bg-success); }
 button.success:active,
-button.success:focus    { box-shadow: 0 0 0 3px var(--lsp-green-two); }
+button.success:focus    { box-shadow: 0 0 0 3px var(--bg-success-soft); }
 button.success:hover    {
-    transition:         background-color 0.2s ease-in;
-    background-color:   var(--lsp-green-tree);
+    transition:         background-color 0.1s ease-in;
+    background-color:   var(--bg-success-dark);
 }
 
 
-button.warning          { background-color:   var(--lsp-yellow-one); }
+button.warning          { background-color:   var(--bg-warning); }
 button.warning:active,
-button.warning:focus    { box-shadow: 0 0 0 3px var(--lsp-yellow-two); }
+button.warning:focus    { box-shadow: 0 0 0 3px var(--bg-warning-soft); }
 button.warning:hover    {
-    transition:         background-color 0.2s ease-in;
-    background-color:   var(--lsp-yellow-tree);
+    transition:         background-color 0.1s ease-in;
+    background-color:   var(--bg-warning-dark);
 }
 
 
-button.danger           { background-color: var(--lsp-red-one); }
+button.danger           { background-color: var(--bg-danger); }
 button.danger:active,
-button.danger:focus     { box-shadow: 0 0 0 3px var(--lsp-red-two); }
+button.danger:focus     { box-shadow: 0 0 0 3px var(--bg-danger-soft); }
 button.danger:hover     {
-    transition:         background-color 0.2s ease-in;
-    background-color:   var(--lsp-red-tree);
+    transition:         background-color 0.1s ease-in;
+    background-color:   var(--bg-danger-dark);
 }

@@ -4,15 +4,14 @@
     display:            flex;
     flex-direction:     column;
     align-items:        stretch;
-    border-radius:      8px;
-    background-color:   var(--lsp-blank);
+    border-radius:      16px;
+    background-color:   var(--bg-gray-dark);
+    overflow:           hidden;
 }
 
 
-.card:not(.w-100) {
-    width:  fit-content;
-    height: fit-content;
-}
+.card:not(.w-100) { width:  fit-content; }
+.card:not(.h-100) { height: fit-content; }
 
 
 .card-header {

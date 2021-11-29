@@ -20,11 +20,17 @@ export default function Flex (props : any) : JSX.Element {
             align: props.align || 'start'
         })
 
-    }, [props.className])
+    }, [
+        props.direction,
+        props.justify,
+        props.align,
+        props.className
+    ])
 
 
     return (
-        <div className={`flex-${ flex?.direction } justify-${ flex?.justify } align-${ flex?.align } ${ props.className }`}>
+        <div style={{ ...props.style }}
+            className={`flex-${ flex?.direction } justify-${ flex?.justify } align-${ flex?.align } ${ props.className || '' }`}>
             { props.children }
         </div>
     )

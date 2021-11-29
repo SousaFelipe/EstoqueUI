@@ -1,57 +1,44 @@
 
 
 
-.input-container {
-    box-sizing:     border-box;
-    width:          calc(100% - 6px);
-    border-radius:  4px;
-    border-width:   1px;
-    border-style:   solid;
-    margin:         3px;
-}
-
-
-
-.input-container.default:not(.is-success),
-.input-container.default:not(.is-warning),
-.input-container.default:not(.is-danger) { border-color: var(--text-muted); }
-
-.input-container.default:not(.is-success):focus-within,
-.input-container.default:not(.is-warning):focus-within,
-.input-container.default:not(.is-danger):focus-within  {
-    border-color:   var(--lsp-cyan-one);
-    box-shadow:     0 0 0 3px var(--lsp-cyan-two);
-}
-
-
-
 input {
-    box-sizing:     border-box;
-    display:        block;
-    border:         none;
-    outline:        none;
-    border:         0;
-    border-radius:  6px;
-    color:          var(--tex-primary);
+    box-sizing:         border-box;
+    display:            block;
+    width:              calc(100% - 6px);
+    margin:             3px;
+    border-radius:      6px;
+    border-width:       1px;
+    border-style:       solid;
+    outline:            none;
+    background-color:   var(--bg-gray-light);
+    color:              var(--tex-primary);
 }
+
+
+input.default:not(.is-success),
+input.default:not(.is-warning),
+input.default:not(.is-danger) { border: 1px solid var(--bg-gray); }
+
+input:focus { background-color: var(--bg-gray); }
+
 
 input.sm {
-    width:          calc(100% - 8px);
-    height:         26px;
-    margin-left:    4px;
-    font-size:      0.75em;
+    height:         var(--control-size-sm);
+    padding-left:   4px;
+    padding-right:  4px;
+    font-size:      14px;
 }
 
+input,
 input.md {
-    width:          calc(100% - 16px);
-    height:         32px;
-    margin-left:    8px;
-    font-size:      1.00em;
+    height:         var(--control-size-md);
+    padding-left:   12px;
+    padding-right:  12px;
 }
 
 input.lg {
-    width:          calc(100% - 22px);
-    height:         42px;
-    margin-left:    11px;
-    font-size:      1.15em;
+    height:         var(--control-size-lg);
+    padding-left:   11px;
+    padding-right:  11px;
+    font-size:      18px;
 }

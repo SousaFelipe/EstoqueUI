@@ -20,10 +20,20 @@ export default function Button (props : any) : JSX.Element {
             block: props.block ? 'block' : ''
         })
 
-    }, [])
+    }, [
+        props.color,
+        props.size,
+        props.block
+    ])
 
 
     return (
-        <button className={`${ button?.color } ${ button?.size } ${ button?.block }`}>{ props.children }</button>
+        <button
+            className={`${ button?.color } ${ button?.size } ${ button?.block } ${ props.className }`}
+            onClick={ props.onClick }>
+
+            { props.children }
+
+        </button>
     )
 }

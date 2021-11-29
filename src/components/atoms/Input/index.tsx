@@ -1,28 +1,37 @@
 import React from 'react'
 
+import TypeInput from './types'
+
 import './style.css'
 
 
 
-export default function Input (props : any) : JSX.Element {
+export default function Input (props: any) : JSX.Element {
 
 
-    function shouldBeHaveLabel () {
-        return <></>
-    }
+    const [input, setInput] = React.useState<TypeInput>()
+
+
+    React.useEffect(() => {
+
+        setInput({
+            type: props.type || 'text',
+            color: props.color || 'default',
+            size: props.size || 'md'
+        })
+
+    }, [
+        props.type,
+        props.color,
+        props.size
+    ])
 
 
     return (
-        <div className={ `input-container ${ (props.color || 'default') }` }>
-
-            { shouldBeHaveLabel() }
-
-            <input
-                type={ (props.type || 'text') }
-                className={ props.className }
-                placeholder={ (props.placeholder || '') }
-                onChange={ props.onChange } />
-
-        </div>
+        <input style={{ ...props.style }}
+            type={ input?.type }
+            className={`${ input?.color } ${ input?.size }`}
+            placeholder={ (props.placeholder || '') }
+            onChange={ props.onChange } />
     )
 }
