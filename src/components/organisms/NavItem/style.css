@@ -1,0 +1,23 @@
+
+
+
+li.nav-item {
+    display:        flex;
+    align-items:    center;
+    padding:        8px 0px 8px 20px;
+    cursor:         pointer;
+    *cursor:        hand;
+}
+
+li:not(.active) { color: var(--text-secondary); }
+li:not(.active) span { color: var(--text-muted); }
+
+li.active, li.active span { color: var(--text-primary); }
+
+li.nav-item:hover,
+li.nav-item:hover span {
+    transition: color 0.2s ease-in;
+    color:      var(--text-primary);
+}
+
+li.nav-item span { margin-right: 15px; }
